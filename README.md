@@ -229,3 +229,56 @@ Right way of using streams
     }
 
 ## Skipping and Limiting
+
+    package com.arun.main;
+    
+    import java.util.stream.IntStream;
+    
+    /**
+     * @author arun on 10/13/20
+     */
+    
+    public class SkippingAndLimiting {
+    
+        public static void main(String[] args) {
+            //this will print out numbers from 0 to 30
+            IntStream.range(0, 30)
+                    .forEach(System.out::println);
+    
+            System.out.println("-----------");
+    
+            //requirement : skip the 10 numbers and print
+            IntStream.range(0, 30)
+                    .skip(10)
+                    .forEach(System.out::println);
+    
+            System.out.println("------------");
+            //requirement : skip the first 10 numbers and print the next 10
+            IntStream.range(0,30)
+                    .skip(10)
+                    .limit(10)
+                    .forEach(System.out::println);
+        }
+    }
+
+
+## TakeWhile
+
+    package com.arun.main;
+    
+    import java.util.Arrays;
+    import java.util.List;
+    
+    /**
+     * @author arun on 10/14/20
+     */
+    
+    public class DropWhileTakeWhile {
+    
+        public static void main(String[] args) {
+    
+            //print the numbers till you encounter 30
+            List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
+            numbers.stream().takeWhile(n -> n != 30).forEach(System.out::println);
+        }
+    }
