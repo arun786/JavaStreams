@@ -16,7 +16,6 @@ public class ComputeCityStats {
 
         //requirement to calculate the average density for a city
         //pass a string and get back the density
-
         Function<String, Double> lineDensity = (line) -> {
             String[] split = line.split(";");
 
@@ -36,5 +35,4 @@ public class ComputeCityStats {
         Double averageDensityOfNewYork = lineDensity.apply(newYork);
         System.out.println("Average Density of New York " + averageDensityOfNewYork);
     }
-
 }
